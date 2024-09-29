@@ -1,6 +1,8 @@
-import {
-    MASHRIQ_DIGIT, MAGHRIB_DIGIT 
-} from '../../seen-compiler/src/constants.js'
+const MASHRIQ_DIGIT = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'] 
+const MAGHRIB_DIGIT = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] 
+const TATWEEL = '\u{640}' 
+const ANY_LETTER = regexp("\\p{L}") 
+const ANY_NUM = regexp("\\p{N}") 
 
 function is_mashriq_num(n) { return contains(MASHRIQ_DIGIT, n[0]) }
 
