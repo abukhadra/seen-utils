@@ -5,6 +5,6 @@ export {
     TATWEEL,
     ANY_LETTER,
     ANY_NUM
-} './constants.js'
+} from './constants.js'
 export {HELPERS} from './helper.js'
 export {appendPkgVersion} from './banner.js'
