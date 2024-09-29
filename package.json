@@ -2,7 +2,7 @@
     "name": "seen-utils",
     "version": "0.1.4",
     "type": "module",
-    "description": "common code used by multiple seen repositories",
+    "description": "common functions used by multiple seen projects",
     "files": [
         "./"
     ],

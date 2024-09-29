@@ -1,1 +1,1 @@
-# Common code used by multiple seen repositories
+# common functions used by multiple seen projects
