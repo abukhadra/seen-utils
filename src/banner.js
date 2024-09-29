@@ -1,12 +1,7 @@
 import * as fs from 'fs'
 
-import { createRequire } from 'node:module'
-
-const require = createRequire(import.meta.url)
-const { version } = require('../../package.json')
-
 function appendPkgVersion(pkgJSONPath, jsFilePath) {
-    const {version} = require(pkgJSON)
+    const {version} = require(pkgJSONPath)
     fs.readFile(jsFilePath, 'utf8', (err, data) => {
         if (err) { console.error(err); return; }
         fs.writeFile(jsFilePath, `/*version: ${version}*/\n${data}` , err => {
