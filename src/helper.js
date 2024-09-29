@@ -65,4 +65,4 @@ async function read_url(url) {
 
 //------------------------------------------------------------------------------
 `
-export default HELPERS
+export {HELPERS}
