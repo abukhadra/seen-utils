@@ -16,8 +16,8 @@ export default defineConfig({
         lib: {
             entry: resolve(__dirname, 'src/main.js'),
             formats: ['es'],
-            name: 'SeenCompiler',
-            fileName: () => 'scomp.js',
+            name: 'SeenUtils',
+            fileName: () => 'sutils.js',
         },          
         rollupOptions: {},
       },    
