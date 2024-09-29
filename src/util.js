@@ -4,9 +4,10 @@ import {
 
 }  from './constants.js'
 
-export function is_mashriq_num(n) { return contains(MASHRIQ_DIGIT, n[0]) }
 
-export function to_mashriq_num(n) {
+function is_mashriq_num(n) { return contains(MASHRIQ_DIGIT, n[0]) }
+
+function to_mashriq_num(n) {
     if(!is_mashriq_num(n)) {
         let v = ""
         let i = 0
@@ -34,7 +35,7 @@ export function to_mashriq_num(n) {
     }
 }
 
-export function to_mashriq_digit(c) {
+function to_mashriq_digit(c) {
     let v
     switch(c) {
         case '0': v = '٠' ; break
@@ -52,9 +53,9 @@ export function to_mashriq_digit(c) {
     return v
 }   
 
-export function is_maghrib_num(n) { return contains(MAGHRIB_DIGIT, n[0]) }
+function is_maghrib_num(n) { return contains(MAGHRIB_DIGIT, n[0]) }
 
-export function to_maghrib_num(n) {
+function to_maghrib_num(n) {
     if(!is_maghrib_num(n)) {
         let v = ""
         let i = 0
@@ -82,7 +83,7 @@ export function to_maghrib_num(n) {
     }
 }
 
-export function to_maghrib_digit(c) {
+function to_maghrib_digit(c) {
     let v
     switch(c) {
         case '٠': v = '0' ; break
@@ -100,13 +101,13 @@ export function to_maghrib_digit(c) {
     return v
 }
 
-export function is_none(x) { return x == null }
-export function is_list(x) { return x instanceof Array }
-export function contains(list, el) { return list.includes(el) }
-export function replace(array, i, v) { array[i] = v }
-export function is_empty(list) { return Array.isArray(list) && list.length === 0 }
-export function to_int(str) { return parseInt(str) }
-export function to_str(obj, indent) {
+function is_none(x) { return x == null }
+function is_list(x) { return x instanceof Array }
+function contains(list, el) { return list.includes(el) }
+function replace(array, i, v) { array[i] = v }
+function is_empty(list) { return Array.isArray(list) && list.length === 0 }
+function to_int(str) { return parseInt(str) }
+function to_str(obj, indent) {
     let objects = []
         const eliminateCircular = (k, v) => {
         if(v && typeof v === 'object') {
@@ -122,12 +123,12 @@ export function to_str(obj, indent) {
     } else { return JSON.stringify(obj, eliminateCircular) }
 }
 
-export function concat(x, y, id) { x[id] = x[id].concat(y[id]) }
-export function del(array, i) { delete array[i] }
-export function assign(x, y) { x = y }
-export function regexp(expr) { return new RegExp(expr, 'u') }
-export function print(v) { throw new Error('print() is not implemeted') }
-export function println(v) { 
+function concat(x, y, id) { x[id] = x[id].concat(y[id]) }
+function del(array, i) { delete array[i] }
+function assign(x, y) { x = y }
+function regexp(expr) { return new RegExp(expr, 'u') }
+function print(v) { throw new Error('print() is not implemeted') }
+function println(v) { 
     if(v == null) {
         console.log("undefined")
     } else {
@@ -135,7 +136,7 @@ export function println(v) {
     }
 }
 
-export function pprint(obj, indent) {
+function pprint(obj, indent) {
     if(obj == null) {
         console.log("undefined")
     } else {
@@ -147,8 +148,36 @@ export function pprint(obj, indent) {
     }
 }
 
-export function panic(v) { throw new Error(v) }
-export function clone(obj) { return { ...obj } }
-export function  repeat(str, times) { return str.repeat(times) }
-export function  c0_to_uppercase(str) { return str.charAt(0).toUpperCase() + str.slice(1) }
-export function  to_lowercase(str) { return str.toLowerCase() }
+function panic(v) { throw new Error(v) }
+function clone(obj) { return { ...obj } }
+function repeat(str, times) { return str.repeat(times) }
+function c0_to_uppercase(str) { return str.charAt(0).toUpperCase() + str.slice(1) }
+function to_lowercase(str) { return str.toLowerCase() }
+
+export {
+    is_mashriq_num,
+    to_mashriq_num,
+    to_mashriq_digit,
+    is_maghrib_num,
+    to_maghrib_num,
+    to_maghrib_digit,
+    is_none,
+    is_list,
+    contains,
+    replace,
+    is_empty,
+    to_int,
+    to_str,
+    concat,
+    del,
+    assign,
+    regexp,
+    print,
+    println,
+    pprint,
+    panic,
+    clone,
+    repeat,
+    c0_to_uppercase,
+    to_lowercase
+}
